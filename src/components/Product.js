@@ -17,8 +17,8 @@ export default function Product({ productInfo }) {
   }
 
   return (
-    <Card style={{ height: '400px' }}>
-      <Card.Body style={{ height: '100%', width: '100%' }}>
+    <Card style={{ height: '100%', width: '100%' }}>
+      <Card.Body>
         <div>
           <img className='rounded mx-auto d-block' src={productInfo.img} />
           <p className='text-center' style={{ marginTop: '10px' }}>
@@ -38,6 +38,11 @@ export default function Product({ productInfo }) {
             {productInfo.price}
           </div>
         </div>
+        {/* <div className='d-flex justify-content-center'>
+          <Button variant='primary' onClick={handleClick}>
+            Sepete Ekle
+          </Button>
+        </div> */}
       </Card.Body>
       <Button
         variant='primary'

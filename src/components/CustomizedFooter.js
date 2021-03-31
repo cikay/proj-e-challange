@@ -29,7 +29,7 @@ export default function CustomizedFooter() {
       style={{ marginTop: '30px' }}
     >
       <div className='container p-4 align-middle'>
-        <Row>
+        <div className='d-flex justify-content-around'>
           <CustomizedList
             title='Kurumsal'
             items={[
@@ -77,7 +77,7 @@ export default function CustomizedFooter() {
             ]}
             style={{ marginLeft: '70px' }}
           />
-        </Row>
+        </div>
       </div>
     </footer>
   )
