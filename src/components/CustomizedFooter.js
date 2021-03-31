@@ -2,19 +2,21 @@ import React from 'react'
 import { Row } from 'react-bootstrap'
 function CustomizedList({ title, items, style }) {
   return (
-    <div
-      classNameName='col-lg-3 col-md-6 mb-4 mb-md-0 d-flex flex-column p-2 flex-wrap'
-      style={style}
-    >
-      <h5 classNameName='text-uppercase'>{title}</h5>
-      <ul classNameName='list-unstyled mb-0'>
-        {items.map((item, index) => (
-          <li key={item + index} style={{ position: 'left' }}>
-            <a href='#!' classNameName='text-dark'>
-              {item}
-            </a>
-          </li>
-        ))}
+    <div className='col-lg-3 col-md-6 mb-4 mb-md-0 ' style={style}>
+      <h6>{title}</h6>
+
+      <ul className='list-unstyled mb-0'>
+        <div className='d-flex flex-column'>  
+          {items.map((item, index) => (
+            <div className='row-sm-3'>
+              <li key={item + index}>
+                <a href='#!' className='text-muted'>
+                  {item}
+                </a>
+              </li>
+            </div>
+          ))}
+        </div>
       </ul>
     </div>
   )
@@ -22,8 +24,11 @@ function CustomizedList({ title, items, style }) {
 
 export default function CustomizedFooter() {
   return (
-    <footer className='bg-light text-center text-lg-start'>
-      <div className='container p-4'>
+    <footer
+      className='bg-light text-center text-lg-start'
+      style={{ marginTop: '30px' }}
+    >
+      <div className='container p-4 align-middle'>
         <Row>
           <CustomizedList
             title='Kurumsal'

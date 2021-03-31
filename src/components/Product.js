@@ -19,27 +19,32 @@ export default function Product({ productInfo }) {
   return (
     <Card style={{ height: '400px' }}>
       <Card.Body style={{ height: '100%', width: '100%' }}>
-        <img className='rounded mx-auto d-block' src={productInfo.img} />
-        <p className='text-center' style={{ marginTop: '10px' }}>
-          <IoMdStarOutline display='inline' style={{ marginBottom: '4px' }} />
-          <span>
-            {productInfo.rating}
-            {' '}
-            <span className='text-muted text-capitalize'>
-              ({productInfo.comment} Yorum)
+        <div>
+          <img className='rounded mx-auto d-block' src={productInfo.img} />
+          <p className='text-center' style={{ marginTop: '10px' }}>
+            <IoMdStarOutline display='inline' style={{ marginBottom: '4px' }} />
+            <span>
+              {productInfo.rating}{' '}
+              <span className='text-muted text-capitalize'>
+                ({productInfo.comment} Yorum)
+              </span>{' '}
+            </span>
+          </p>
+          <p className='text-center'>{productInfo.title}</p>
+          <div className='text-primary text-center mb-auto p-2'>
+            <span className='font-weight-bold'>
+              {productInfo.cur && getCurrencyIcon(productInfo.cur)}
             </span>{' '}
-          </span>
-        </p>
-        <p className='text-center'>{productInfo.title}</p>
-        <div className='text-primary text-center mb-auto p-2'>
-          <span className='font-weight-bold'>
-            {productInfo.cur && getCurrencyIcon(productInfo.cur)}
-          </span>{' '}
-          {productInfo.price}
+            {productInfo.price}
+          </div>
         </div>
       </Card.Body>
-      <Button variant='primary' onClick={handleClick}>
-        Sepete Eklepx
+      <Button
+        variant='primary'
+        onClick={handleClick}
+        style={{ margin: '0 20px 5px 20px' }}
+      >
+        Sepete Ekle
       </Button>
     </Card>
   )

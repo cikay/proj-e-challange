@@ -4,7 +4,7 @@ const ProductContext = React.createContext()
 const useProductContext = () => React.useContext(ProductContext)
 function ProductProvider({ children }) {
   const [state, dispatch] = React.useReducer(productReducer, initialState)
-  const addProduct = (payload) => {
+  function addProduct(payload) {
     dispatch({ type: ProductTypes.ADDED_PRODUCT, payload })
   }
 
