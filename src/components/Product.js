@@ -3,7 +3,6 @@ import { Button, Card } from 'react-bootstrap'
 import { useProductContext } from '../contexts/ProductContext'
 import { IoMdStarOutline } from 'react-icons/io'
 
-
 export default function Product({ productInfo }) {
   const { addProduct } = useProductContext()
   const handleClick = () => {
@@ -12,7 +11,7 @@ export default function Product({ productInfo }) {
 
   return (
     <Card style={{ height: '400px' }}>
-      <Card.Body>
+      <Card.Body style={{ height: '100%', width: '100%' }}>
         <img src={productInfo.img} />
         <div>
           <IoMdStarOutline display='inline' />
@@ -26,7 +25,7 @@ export default function Product({ productInfo }) {
           {productInfo.cur} {productInfo.price}
         </div>
       </Card.Body>
-      <Button variant='primary' onClick={handleClick} >
+      <Button variant='primary' onClick={handleClick}>
         Sepete Ekle
       </Button>
     </Card>
