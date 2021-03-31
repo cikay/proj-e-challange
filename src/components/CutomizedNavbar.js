@@ -14,14 +14,18 @@ import { useProductContext } from '../contexts/ProductContext'
 export default function CutomizedNavbar() {
   const { addedItems } = useProductContext()
   return (
-    <Navbar bg='light' expand='lg' fixed="top">
+    <Navbar bg='primary' expand='lg' fixed='top'>
       <Form inline className='my-auto'>
-        <FormControl type='text' placeholder='Search' className='mr-sm-2' />
+        <FormControl
+          type='text'
+          placeholder='Search'
+          className='align-items-center'
+        />
         <Button variant='outline-success'>Search</Button>
       </Form>
 
-      <div className='ml-auto'>
-        <span>
+      <div className='ml-auto text-white'>
+        <span color='white'>
           Üyelik <BiUser />
         </span>
 

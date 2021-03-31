@@ -2,6 +2,13 @@ import React, { Profiler } from 'react'
 import { Button, Card } from 'react-bootstrap'
 import { useProductContext } from '../contexts/ProductContext'
 import { IoMdStarOutline } from 'react-icons/io'
+import CenteredContainer from './CenteredContainer'
+const currencyIcons = {
+  tl: '₺',
+  dlr: '$',
+}
+
+const getCurrencyIcon = (cur) => currencyIcons[cur.toLowerCase()]
 
 export default function Product({ productInfo }) {
   const { addProduct } = useProductContext()
@@ -10,24 +17,31 @@ export default function Product({ productInfo }) {
   }
 
   return (
-    <Card style={{ height: '400px' }}>
-      <Card.Body style={{ height: '100%', width: '100%' }}>
-        <img src={productInfo.img} />
-        <div>
-          <IoMdStarOutline display='inline' />
-          <span display='inline'>{productInfo.rating}</span>
-          <p className='text-muted' display='inline'>
-            ({productInfo.comment} Yorum)
+    
+      <Card style={{ height: '400px' }}>
+        <Card.Body style={{ height: '100%', width: '100%' }}>
+          <img className='rounded mx-auto d-block' src={productInfo.img} />
+          <p className='text-center' style={{ marginTop: '10px' }}>
+            <IoMdStarOutline display='inline' />
+            <span>
+              {productInfo.rating}{' '}
+              <span className='text-muted text-capitalize'>
+                ({productInfo.comment} Yorum)
+              </span>{' '}
+            </span>
           </p>
-        </div>
-        <span>{productInfo.title}</span>
-        <div>
-          {productInfo.cur} {productInfo.price}
-        </div>
-      </Card.Body>
-      <Button variant='primary' onClick={handleClick}>
-        Sepete Ekle
-      </Button>
-    </Card>
+          <p className='text-center'>{productInfo.title}</p>
+          <div className='text-primary text-center mb-auto p-2'>
+            <span className='font-weight-bold'>
+              {productInfo.cur && getCurrencyIcon(productInfo.cur)}
+            </span>{' '}
+            {productInfo.price}
+          </div>
+        </Card.Body>
+        <Button variant='primary' onClick={handleClick}>
+          Sepete Ekle
+        </Button>
+      </Card>
+    
   )
 }
