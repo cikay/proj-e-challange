@@ -1,22 +1,18 @@
 import React from 'react'
-import { Row } from 'react-bootstrap'
+
 function CustomizedList({ title, items, style }) {
   return (
     <div className='col-lg-3 col-md-6 mb-4 mb-md-0 ' style={style}>
       <h6>{title}</h6>
-      <ul className='list-unstyled mb-0'>
-        <div className='d-flex flex-column'>  
-          {items.map((item, index) => (
-            <div className='row-sm-3'>
-              <li key={item + index}>
-                <a href='#!' className='text-muted'>
-                  {item}
-                </a>
-              </li>
-            </div>
-          ))}
-        </div>
-      </ul>
+      <div className='d-flex flex-col flex-wrap'>
+        {items.map((item, index) => (
+          <div key={index} className='col-sm-4 p-2'>
+            <a href='#!' className='text-muted'>
+              {item}
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -27,22 +23,9 @@ export default function CustomizedFooter() {
       className='bg-light text-center text-lg-start'
       style={{ marginTop: '30px' }}
     >
+      {' '}
       <div className='container p-4 align-middle'>
         <div className='d-flex justify-content-around'>
-          <CustomizedList
-            title='Kurumsal'
-            items={[
-              'Elektronik',
-              'Beyaz Eşya',
-              'Koltuk Takımı',
-              'Elektronik',
-              'Beyaz Eşya',
-              'Koltuk Takımı',
-              'Elektronik',
-              'Beyaz Eşya',
-              'Koltuk Takımı',
-            ]}
-          />
           <CustomizedList
             title='Kategoriler'
             items={[
@@ -58,6 +41,22 @@ export default function CustomizedFooter() {
             ]}
             style={{ marginLeft: '70px' }}
           />
+
+          <CustomizedList
+            title='Kurumsal'
+            items={[
+              'Elektronik',
+              'Beyaz Eşya',
+              'Koltuk Takımı',
+              'Elektronik',
+              'Beyaz Eşya',
+              'Koltuk Takımı',
+              'Elektronik',
+              'Beyaz Eşya',
+              'Koltuk Takımı',
+            ]}
+          />
+
           <CustomizedList
             title='Özel Ürünler'
             items={[
