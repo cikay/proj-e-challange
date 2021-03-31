@@ -18,7 +18,7 @@ export default function Product({ productInfo }) {
 
   return (
     <Card style={{ height: '100%', width: '100%' }}>
-      <Card.Body>
+      <Card.Body style={{ height: '100%', width: '100%' }}>
         <div style={{ height: '25%' }}>
           <img className='rounded mx-auto d-block' src={productInfo.img} />
         </div>
@@ -48,19 +48,11 @@ export default function Product({ productInfo }) {
           <Button
             variant='primary'
             onClick={handleClick}
-            style={{ margin: '0 20px 5px 20px' }}
           >
             Sepete Ekle
           </Button>
         </div>
       </Card.Body>
-      {/* <Button
-        variant='primary'
-        onClick={handleClick}
-        style={{ margin: '0 20px 5px 20px' }}
-      >
-        Sepete Ekle
-      </Button> */}
     </Card>
   )
 }
