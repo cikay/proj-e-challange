@@ -23,7 +23,8 @@ export default function Product({ productInfo }) {
         <p className='text-center' style={{ marginTop: '10px' }}>
           <IoMdStarOutline display='inline' style={{ marginBottom: '4px' }} />
           <span>
-            {productInfo.rating}{' '}
+            {productInfo.rating}
+            {' '}
             <span className='text-muted text-capitalize'>
               ({productInfo.comment} Yorum)
             </span>{' '}

@@ -21,7 +21,12 @@ export default function CutomizedNavbar() {
           placeholder='Search'
           className='align-items-center'
         />
-        <Button variant='outline-success'>Search</Button>
+        <Button
+          variant='light'
+          style={{ marginLeft: '5px',}}
+        >
+          Search
+        </Button>
       </Form>
 
       <div className='ml-auto text-white'>
@@ -33,7 +38,9 @@ export default function CutomizedNavbar() {
           Sepetim{' '}
           <Badge>
             <FiShoppingCart />
-            {addedItems.length < 1 ? null : addedItems.length}
+            <span style={{ margin: '0 0 8px 5px' }}>
+              {addedItems.length < 1 ? null : addedItems.length}
+            </span>
           </Badge>
         </span>
       </div>

@@ -13,6 +13,7 @@ export default function Home() {
         <Slider />
         <ProductsContainer products={BestSellerProducts} title='Çok Satanlar' />
         <ProductsContainer products={RelatedProducts} title='Benzer ürünler' />
+        
       </Col>
       <Col xs={12} md={1}></Col>
     </Row>
