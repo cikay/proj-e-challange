@@ -4,7 +4,6 @@ function CustomizedList({ title, items, style }) {
   return (
     <div className='col-lg-3 col-md-6 mb-4 mb-md-0 ' style={style}>
       <h6>{title}</h6>
-
       <ul className='list-unstyled mb-0'>
         <div className='d-flex flex-column'>  
           {items.map((item, index) => (
